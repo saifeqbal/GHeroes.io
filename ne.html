@@ -1,0 +1,378 @@
+c// _buttons.scss
+
+
+
+
+// Variables
+$button-padding: 12px 24px;
+$button-font-size: 16px;
+$button-border-radius: 4px;
+$button-transition: all 0.3s ease;
+$green-transparent-color: rgba(46, 204, 113, 0.2); // Light transparent green
+$green-color: #2ecc71; // Solid green color for hover
+$button-text-color: #2ecc71;
+
+// Mixin for Transparent Button Style
+@mixin button-transparent($border-color, $text-color) {
+  background-color: transparent;
+  color: $text-color;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  border: 2px solid $border-color;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  transition: $button-transition;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background-color: $green-color; // Solid green on hover
+    color: #fff; // Change text color to white on hover
+  }
+
+  &:active {
+    background-color: darken($green-color, 10%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px lighten($green-color, 20%);
+  }
+}
+
+// Green Transparent Button
+.button-green-transparent {
+  @include button-transparent($green-color, $button-text-color);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Box Example</title>
+</head>
+<body>
+    <button id="openDialogBtn">Open Dialog</button>
+
+    <dialog id="myDialog">
+        <h2>Dialog Title</h2>
+        <p>This is a dialog box.</p>
+        <button id="closeDialogBtn">Close</button>
+    </dialog>
+
+    <script>
+        const dialog = document.getElementById('myDialog');
+        const openDialogBtn = document.getElementById('openDialogBtn');
+        const closeDialogBtn = document.getElementById('closeDialogBtn');
+
+        openDialogBtn.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        closeDialogBtn.addEventListener('click', () => {
+            dialog.close();
+        });
+    </script>
+</body>
+</html>
+ 
+
+<$primary-color: #3498db;
+$background-color: #ecf0f1;
+$text-color: #2c3e50;
+$box-shadow-color: rgba(0, 0, 0, 0.2);
+
+.dialog-box {
+  width: 300px;
+  padding: 20px;
+  background-color: $background-color;
+  color: $text-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px $box-shadow-color;
+  position: relative;
+  text-align: center;
+  
+  .dialog-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .dialog-content {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    
+    .btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      
+      &.confirm {
+        background-color: $primary-color;
+        color: #fff;
+        
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+      
+      &.cancel {
+        background-color: #e74c3c;
+        color: #fff;
+        
+        &:hover {
+          background-color: darken(#e74c3c, 10%);
+        }
+      }
+    }
+  }
+}
+
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Box Example</title>
+</head>
+<body>
+    <button id="openDialogBtn">Open Dialog</button>
+
+    <dialog id="myDialog">
+        <h2>Dialog Title</h2>
+        <p>This is a dialog box.</p>
+        <button id="closeDialogBtn">Close</button>
+    </dialog>
+
+    <script>
+        const dialog = document.getElementById('myDialog');
+        const openDialogBtn = document.getElementById('openDialogBtn');
+        const closeDialogBtn = document.getElementById('closeDialogBtn');
+
+        openDialogBtn.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        closeDialogBtn.addEventListener('click', () => {
+            dialog.close();
+        });
+    </script>
+
+</body>
+</html>
+
+<?php
+$target_dir = "uploads/"; // Directory where the file will be uploaded
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["vriable"]);
+$uploadOk = 1;
+$fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+
+// Check file size (example: 2MB limit)
+if ($_FILES["fileToUpload"]["size"] > 2000000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+
+// Allow certain file formats
+$allowed_types = array("jpg", "png", "jpeg", "gif", "pdf", "docx");
+if (!in_array($fileType, $allowed_types)) {
+    echo "Sorry, only JPG, JPEG, PNG, GIF, PDF, & DOCX files are allowed.";
+    $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["vriable"])). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>
+<code>
+int function [define];
+@define function integer;
+/*function to stare at
+ the role*/
+<\code>
+int function Integer (int define ,long data)
+{
+byte define="new" ;
+print define}) ;
+data=Integer.parseInt(in.readLine());
+system.print("show  the current role");
+short arole = data;
+print("function for accepting the currnt role"};
+print("short");
+print(arole);
+}
+print.role();
+role();
+private role()
+{
+cout<<"role is developer";
+print("system defined");
+}
+{
+#deifne role "new";
+cin(role)<<code:"new"1?,2;
+#define 
+}
+
+
+@call.do(system)
+while;
+
+int system(call):int call;
+/*function prints the current role*/
+ int likee00;
+#define likee00 ;
+
+define commit(paginate,defineE)
+{
+int define;
+public int@define 
+#define core 1++++;
+"print the value of ";
+ 
+system.print;
+system.print(defineE);
+}
+
+<code>
+
+\\code for making a dialog box 
+<?php
+$_push= "new server";
+$_push = core serevr upload";
+$_post($_vriable = new);
+$_post($_vriable);
+$_push(vriable);
+$_post = $_fileuploa;//file upload for showing details;
+
+
+$echo=file=variable;
+
+<script>
+
+</script>
+
+vriable=new.jpeg;
+vriable=new.jpg;
+<code>
+  <div))code
+</code
+
+
+
+\\code for new html website for file upload\\
+
+<?php
+ //new page for file upload// 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label>
+        <input type="file" id="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
+
+<?php
+
+-$target_dir = "uploads/"; // Directory where the file will be uploaded
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+
+// Check file size (example: 2MB limit)
+if ($_FILES["fileToUpload"]["size"] > 2000000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+
+// Allow certain file formats
+$allowed_types = array("jpg", "png", "jpeg", "gif", "pdf", "docx");
+if (!in_array($fileType, $allowed_types)) {
+    echo "Sorry, only JPG, JPEG, PNG, GIF, PDF, & DOCX files are allowed.";
+    $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["vriable"]))." has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>
+<html>
+<<code>
+
+/* code for Svg graphics on the new personel*/
+<v i d id=21>
+<Svg id=drawing a chart for du att" >
+<line id="dp" pixel:677", pixel: 345; pixel : 523; pixel: 888; style="stroke"; stroke-width="3";
+\>
+<line id="du blocked"  point = "839" ; point = "545"; point "582"; point = 789; style="stroke"\> 
+<code> //code for making the output available for the user*/
+int function( )
+{
+int make(int che("maketsw"));
+print (che);
+int che( );
+
+}
+<\code>
+<\code> 
+
+<line>
+<\svg>
+<Svg>
+
+<\Svg>
+
+
+
+
+<file upload =" ">
+file 
+<html>
+
+
+
